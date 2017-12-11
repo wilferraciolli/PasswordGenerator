@@ -6,10 +6,8 @@
  */
 package com.wiltech.PasswordGen;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * The type Password generator.
@@ -46,7 +44,7 @@ public class PasswordGenerator {
 
         //create a stream of chars to generate the password
         char[] password = new char[LENGTH];
-        IntStream.range(1, LENGTH)
+        IntStream.range(0, LENGTH)
                 .forEach(index -> password[index] = passSymbols.charAt(rnd.nextInt(passSymbols.length())));
 
         return password;
@@ -56,14 +54,14 @@ public class PasswordGenerator {
      * Generate password as string string. Util method to randomly generate password.
      * @return the string
      */
-    static String generatePasswordAsString() {
+    public static String generatePasswordAsString() {
         //define what the body will consist of
         String passSymbols = CHAR_CAPITAL_CASE + CHAR_LOWER_CASE + ALLOWED_NUMBERS + ALLOWED_SYMBOLS;
         Random rnd = new Random();
 
         //create a stream of chars to generate the password
         StringBuilder password = new StringBuilder();
-        IntStream.range(1, LENGTH)
+        IntStream.range(0, LENGTH)
                 .forEach(index -> password.append(passSymbols.charAt(rnd.nextInt(passSymbols.length()))));
 
         return password.toString();
