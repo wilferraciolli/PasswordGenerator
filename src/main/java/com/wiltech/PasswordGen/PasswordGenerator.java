@@ -1,9 +1,3 @@
-/**
- * (c) Midland Software Limited 2017
- * Name     : PasswordGenerator.java
- * Author   : ferraciolliw
- * Date     : 11 Dec 2017
- */
 package com.wiltech.PasswordGen;
 
 import java.util.Random;

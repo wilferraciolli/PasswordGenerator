@@ -1,9 +1,3 @@
-/**
- * (c) Midland Software Limited 2017
- * Name     : PasswordGeneratorTest.java
- * Author   : ferraciolliw
- * Date     : 11 Dec 2017
- */
 package com.wiltech.PasswordGen;
 
 import static org.junit.Assert.assertEquals;
