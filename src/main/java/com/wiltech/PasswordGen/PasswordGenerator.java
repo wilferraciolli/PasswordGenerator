@@ -1,6 +1,7 @@
 package com.wiltech.PasswordGen;
 
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -11,7 +12,7 @@ public class PasswordGenerator {
     private static final String CHAR_CAPITAL_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String CHAR_LOWER_CASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String ALLOWED_NUMBERS = "0123456789";
-    private static final String ALLOWED_SYMBOLS = "!@#^&*_=+-/?<>)";
+    private static final String ALLOWED_SYMBOLS = "!@#^&*_=+-/?<>";
     private static final int LENGTH = 20;
 
     /**
@@ -54,11 +55,9 @@ public class PasswordGenerator {
         Random rnd = new Random();
 
         //create a stream of chars to generate the password
-        StringBuilder password = new StringBuilder();
-        IntStream.range(0, LENGTH)
-                .forEach(index -> password.append(passSymbols.charAt(rnd.nextInt(passSymbols.length()))));
-
-        return password.toString();
+        return  IntStream.range(0, LENGTH)
+                .mapToObj(index ->  passSymbols.charAt(rnd.nextInt(passSymbols.length())) + "")
+                .collect(Collectors.joining(""));
     }
 }
 
